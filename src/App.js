@@ -13,7 +13,6 @@ function App() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                setIsLoading(true);
                 const response = await axios.get(`https://rickandmortyapi.com/api/character?name=${name}&page=${currentPage + 1}`);
                 setCharacters(response.data.results);
                 setTotalPages(response.data.info.pages);
